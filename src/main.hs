@@ -1,5 +1,6 @@
 import Control.Concurrent
 
+import FlavoursMVar.Barrier
 import FlavoursMVar.Lock
 import FlavoursMVar.Var
 
@@ -8,6 +9,7 @@ main :: IO ()
 main = do
    tryLock
    tryVar
+   tryBarrier
 
 
 -- No interleaved output even with buffering still allowed
@@ -35,5 +37,17 @@ tryVar = do
 
    i <- readVar hits
    print ("HITS", i)
+
+   return ()
+
+
+-- Blocking for completion
+tryBarrier :: IO ()
+tryBarrier = do
+   bar <- newBarrier
+   forkIO $ do
+      threadDelay 1000000
+      signalBarrier bar "foo"
+   print =<< waitBarrier bar
 
    return ()
