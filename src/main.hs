@@ -1,10 +1,14 @@
 import Control.Concurrent
 
 import FlavoursMVar.Lock
+import FlavoursMVar.Var
+
 
 main :: IO ()
 main = do
    tryLock
+   tryVar
+
 
 -- No interleaved output even with buffering still allowed
 tryLock :: IO ()
@@ -16,5 +20,20 @@ tryLock = do
 
    -- Keep program from exiting a little longer
    threadDelay 2000
+
+   return ()
+
+
+-- Thread-safe mutable variable
+tryVar :: IO ()
+tryVar = do
+   hits <- newVar 0
+   forkIO $ do modifyVar_ hits (return . (+ 1))
+
+   -- Wait for the forked thread to do something
+   threadDelay 2000
+
+   i <- readVar hits
+   print ("HITS", i)
 
    return ()
