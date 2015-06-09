@@ -1,7 +1,9 @@
 import Control.Concurrent
+import Data.Time
 
 import FlavoursMVar.Barrier
 import FlavoursMVar.Lock
+import FlavoursMVar.Once
 import FlavoursMVar.Var
 
 
@@ -10,6 +12,7 @@ main = do
    tryLock
    tryVar
    tryBarrier
+   tryOnce
 
 
 -- No interleaved output even with buffering still allowed
@@ -49,5 +52,17 @@ tryBarrier = do
       threadDelay 1000000
       signalBarrier bar "foo"
    print =<< waitBarrier bar
+
+   return ()
+
+
+-- An action that gets performed exactly once
+tryOnce :: IO ()
+tryOnce = do
+   oneTime <- once getCurrentTime
+
+   print =<< oneTime
+   print =<< oneTime
+   print =<< oneTime
 
    return ()
