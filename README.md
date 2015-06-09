@@ -13,8 +13,8 @@ Code to explore MVar examples at [The Flavours of MVar](http://neilmitchell.blog
 
 ## Getting source
 
-- Get the source with darcs: `$ darcs get http://hub.darcs.net/dino/foo`
-- If you're just looking, [browse the source](http://hub.darcs.net/dino/foo)
+- Get the source with darcs: `$ darcs get http://hub.darcs.net/dino/flavours-mvar`
+- If you're just looking, [browse the source](http://hub.darcs.net/dino/flavours-mvar)
 
 And once you have it, building the usual way:
 

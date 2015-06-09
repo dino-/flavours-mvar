@@ -2,20 +2,23 @@ name:                flavours-mvar
 version:             1.0
 synopsis:            Exploring Neil Mitchell's MVar examples
 description:         Code to explore MVar examples at http://neilmitchell.blogspot.com/2012/06/flavours-of-mvar_04.html
+homepage:            http://hub.darcs.net/dino/flavours-mvar
 license:             BSD3
 license-file:        LICENSE
 author:              Dino Morelli
 maintainer:          dino@ui3.info
--- copyright:           
+copyright:           2015 Dino Morelli
 category:            Experimentation
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
 
+source-repository    head
+   type:             darcs
+   location:         http://hub.darcs.net/dino/flavours-mvar
+
 executable flavours-mvar
   main-is:             main.hs
-  -- other-modules:       
-  -- other-extensions:    
   build-depends:       base >=4.8 && <4.9
                      , time
   hs-source-dirs:      src
