@@ -1,3 +1,28 @@
-Code to explore these MVar examples [The Flavours of MVar](http://neilmitchell.blogspot.com/2012/06/flavours-of-mvar_04.html)
+# flavours-mvar
 
-There's a statement on the page about implementing Once with a single MVar but it violating the "simple rules of restricted MVarS", because of the ambiguity of using the MVar empty state for two things. Could this be solved with a custom 3-state ADT? Try it.
+
+## Synopsis
+
+Exploring Neil Mitchell's MVar examples (Haskell)
+
+
+## Description
+
+Code to explore MVar examples at [The Flavours of MVar](http://neilmitchell.blogspot.com/2012/06/flavours-of-mvar_04.html)
+
+
+## Getting source
+
+- Get the source with darcs: `$ darcs get http://hub.darcs.net/dino/foo`
+- If you're just looking, [browse the source](http://hub.darcs.net/dino/foo)
+
+And once you have it, building the usual way:
+
+    $ cabal configure
+    $ cabal build
+    $ cabal run
+
+
+## Contact
+
+Dino Morelli <[dino@ui3.info](mailto:dino@ui3.info)>
