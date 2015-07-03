@@ -1,5 +1,5 @@
 name:                flavours-mvar
-version:             1.0
+version:             1.1
 synopsis:            Exploring Neil Mitchell's MVar examples
 description:         Code to explore MVar examples at http://neilmitchell.blogspot.com/2012/06/flavours-of-mvar_04.html
 homepage:            http://hub.darcs.net/dino/flavours-mvar
