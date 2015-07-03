@@ -20,6 +20,6 @@ source-repository    head
 executable flavours-mvar
   main-is:             main.hs
   build-depends:       base >=4.8 && <4.9
-                     , time
+                     , time >= 1.5
   hs-source-dirs:      src
   default-language:    Haskell2010
